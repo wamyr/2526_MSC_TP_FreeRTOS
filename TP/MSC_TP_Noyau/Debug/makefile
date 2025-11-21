@@ -9,6 +9,10 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/subdir.mk
 -include Drivers/STM32G4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
@@ -60,8 +64,8 @@ all: main-build
 main-build: MSC_TP_Noyau.elf secondary-outputs
 
 # Tool invocations
-MSC_TP_Noyau.elf MSC_TP_Noyau.map: $(OBJS) $(USER_OBJS) C:\Users\garbe\Documents\BaseProjet\MSC_TP_Noyau\STM32G431RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "MSC_TP_Noyau.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\garbe\Documents\BaseProjet\MSC_TP_Noyau\STM32G431RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MSC_TP_Noyau.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+MSC_TP_Noyau.elf MSC_TP_Noyau.map: $(OBJS) $(USER_OBJS) C:\Users\sammy\Documents\2526_MSC_TP_FreeRTOS\TP\MSC_TP_Noyau\STM32G431RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "MSC_TP_Noyau.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\sammy\Documents\2526_MSC_TP_FreeRTOS\TP\MSC_TP_Noyau\STM32G431RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MSC_TP_Noyau.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
