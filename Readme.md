@@ -11,8 +11,10 @@ Dans la configuration du FreeRTOS il y a des paramètres pertientes comme la pri
 Ce qui change dans le fichier  FreeRTOSConfig.h sont les #define comme configTOTAL_HEAP_SIZE qui passe à 20K.
 
 1.1 
+<img width="544" height="180" alt="image" src="https://github.com/user-attachments/assets/ba7246d6-67d1-44d2-8d42-1e618cbfa8d5" />
 
-La macro portTICK_PERIOD_MS convertit la fréquence de l'horloge de FreeRTOS en ms.
+Rien de bien compliqué, on définit correctement la tâche, sa création et on lance le Scheduler et tout fonctionne ! 
+La macro portTICK_PERIOD_MS renvoie la période du tick, l'interruption d'horloge utilisée FreeRTOS, en ms.
 
 1.2 Sémaphores pour la synchronisation
 code :
