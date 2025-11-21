@@ -11,9 +11,10 @@ Dans la configuration du FreeRTOS il y a des paramètres pertientes comme la pri
 Ce qui change dans le fichier  FreeRTOSConfig.h sont les #define comme configTOTAL_HEAP_SIZE qui passe à 20K.
 
 1.1 
-<img width="544" height="180" alt="image" src="https://github.com/user-attachments/assets/ba7246d6-67d1-44d2-8d42-1e618cbfa8d5" />
+<img width="870" height="215" alt="image" src="https://github.com/user-attachments/assets/10428047-19ad-4f14-837c-7344e5007d74" />
 
-Rien de bien compliqué, on définit correctement la tâche, sa création et on lance le Scheduler et tout fonctionne ! 
+Rien de bien compliqué, on définit correctement la tâche, sa création et on lance le Scheduler et tout fonctionne !
+Note : On utilisera un #define pour Period_Toggle plutôt... mais pour prendre la photo c'est mieux comme ça. 
 La macro portTICK_PERIOD_MS renvoie la période du tick, l'interruption d'horloge utilisée FreeRTOS, en ms.
 
 1.2 Sémaphores pour la synchronisation
