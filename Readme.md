@@ -10,7 +10,8 @@ On configure le NVIC du péréphérique GPIO et configure la fonction weak Callb
 Dans la configuration du FreeRTOS il y a des paramètres pertientes comme la priorité maximal (dépend de la complexité du projet), de la taille stack ou de la fréquence de tick mais le plus pertinent à ce niveau est le HEAP_Size que l'on s'empresse d'augmenter à 20K car correspond à la mémoire dynamic pour les tâches et variables utilisés pour l'os. 
 Ce qui change dans le fichier  FreeRTOSConfig.h sont les #define comme configTOTAL_HEAP_SIZE qui passe à 20K.
 
-1.1 
+1.1 Tâche simple
+
 <img width="870" height="215" alt="image" src="https://github.com/user-attachments/assets/10428047-19ad-4f14-837c-7344e5007d74" />
 
 Rien de bien compliqué, on définit correctement la tâche, sa création et on lance le Scheduler et tout fonctionne !
