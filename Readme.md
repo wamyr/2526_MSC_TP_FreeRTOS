@@ -23,7 +23,16 @@ résultat :
 <img width="518" height="876" alt="image" src="https://github.com/user-attachments/assets/792271e9-4621-43de-bbf7-acbecdec5155" />
 En inversant les priorités :
 <img width="504" height="803" alt="image" src="https://github.com/user-attachments/assets/fe05daf2-bd71-4e84-aa81-ca80dd058f7f" />
-Il faudra commenter pourquoi. (à la fin TaskTake a une priorité > TaskGive
+Il faudra commenter pourquoi. (à la fin TaskTake a une priorité > TaskGive)
+
+1.3 Notification
+code :
+<img width="713" height="687" alt="image" src="https://github.com/user-attachments/assets/52de239b-f23f-4111-81ce-95a2fc66767d" />
+<img width="824" height="91" alt="image" src="https://github.com/user-attachments/assets/f491a08a-b80b-4bd9-b2db-94e4a656930d" />
+résultat :
+<img width="522" height="806" alt="image" src="https://github.com/user-attachments/assets/64f9f2fa-7221-4167-8e55-d2cdb3d9de48" />
+Cela fonctionne comme avant donc on a réussie à remplacer ke sémaphore en notification.
+
 
 
 
