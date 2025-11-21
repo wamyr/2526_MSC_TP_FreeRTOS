@@ -16,7 +16,8 @@ Ce qui change dans le fichier  FreeRTOSConfig.h sont les #define comme configTOT
 
 Rien de bien compliqué, on définit correctement la tâche, sa création et on lance le Scheduler et tout fonctionne !
 Note : On utilisera un #define pour Period_Toggle plutôt... mais pour prendre la photo c'est mieux comme ça. 
-La macro portTICK_PERIOD_MS renvoie la période du tick, l'interruption d'horloge utilisée FreeRTOS, en ms.
+
+La macro portTICK_PERIOD_MS renvoie la période du tick, l'interruption d'horloge utilisée par FreeRTOS, en ms.
 
 1.2 Sémaphores pour la synchronisation
 code :
