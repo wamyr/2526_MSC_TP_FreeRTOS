@@ -10,6 +10,10 @@ On configure le NVIC du péréphérique GPIO et configure la fonction weak Callb
 Dans la configuration du FreeRTOS il y a des paramètres pertientes comme la priorité maximal (dépend de la complexité du projet), de la taille stack ou de la fréquence de tick mais le plus pertinent à ce niveau est le HEAP_Size que l'on s'empresse d'augmenter à 20K car correspond à la mémoire dynamic pour les tâches et variables utilisés pour l'os. 
 Ce qui change dans le fichier  FreeRTOSConfig.h sont les #define comme configTOTAL_HEAP_SIZE qui passe à 20K.
 
+1.1 
+
+La macro portTICK_PERIOD_MS convertit la fréquence de l'horloge de FreeRTOS en ms.
+
 1.2 Sémaphores pour la synchronisation
 <img width="518" height="876" alt="image" src="https://github.com/user-attachments/assets/792271e9-4621-43de-bbf7-acbecdec5155" />
 
