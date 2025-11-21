@@ -15,5 +15,14 @@ Ce qui change dans le fichier  FreeRTOSConfig.h sont les #define comme configTOT
 La macro portTICK_PERIOD_MS convertit la fréquence de l'horloge de FreeRTOS en ms.
 
 1.2 Sémaphores pour la synchronisation
+code :
+<img width="719" height="622" alt="image" src="https://github.com/user-attachments/assets/6d08e993-1fc1-437f-a51b-82b794061031" />
+résultat : 
 <img width="518" height="876" alt="image" src="https://github.com/user-attachments/assets/792271e9-4621-43de-bbf7-acbecdec5155" />
+En inversant les priorités :
+<img width="504" height="803" alt="image" src="https://github.com/user-attachments/assets/fe05daf2-bd71-4e84-aa81-ca80dd058f7f" />
+Il faudra commenter pourquoi. (à la fin TaskTake a une priorité > TaskGive
+
+
+
 
