@@ -8,11 +8,9 @@
 #ifndef INC_TASK_H_
 #define INC_TASK_H_
 
-#include <main.h>
 #include <stdio.h>
 #include "cmsis_os.h"
 #include "gpio.h"
-
 
 #define PERIOD_TOGGLE (100 / portTICK_PERIOD_MS) // Corresponds to 100ms.
 #define DELAY_100MS (100 / portTICK_PERIOD_MS)

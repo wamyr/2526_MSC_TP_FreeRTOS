@@ -18,14 +18,14 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+#include "cmsis_os.h"
+#include "usart.h"
+#include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include <stdio.h>
-#include "fonctions.h"
-#include "task.h"
+
 
 /* USER CODE END Includes */
 
@@ -56,6 +56,7 @@
 BaseType_t ret ;
 SemaphoreHandle_t Task_bug_mutex;
 QueueHandle_t TaskGT_queue;
+
 
 /* USER CODE END PV */
 
@@ -105,6 +106,7 @@ int main(void)
 
 	printf("\r\n ** INTRO_RTOS ** \r\n");
 
+	
 	TaskGT_queue = xQueueCreate(TaskGT_iter_max, sizeof(uint32_t));
 
 	if (TaskGT_queue == NULL) {

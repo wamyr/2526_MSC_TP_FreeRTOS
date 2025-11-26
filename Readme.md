@@ -28,11 +28,11 @@ La macro portTICK_PERIOD_MS renvoie la période du tick, l'interruption d'horlog
 
 <img width="550" height="476" alt="image" src="https://github.com/user-attachments/assets/6d08e993-1fc1-437f-a51b-82b794061031" />
 
-**Résultat :**
+5) **Résultat :**
 
 <img width="400" height="674" alt="image" src="https://github.com/user-attachments/assets/792271e9-4621-43de-bbf7-acbecdec5155" />
 
-**En inversant les priorités :**
+6) **En inversant les priorités :**
 *TaskTake a une priorité supérieur à TaskGive*
 
 <img width="400" height="674" alt="image" src="https://github.com/user-attachments/assets/fe05daf2-bd71-4e84-aa81-ca80dd058f7f" />
@@ -42,7 +42,7 @@ Les résultats obtenus sont cohérent. Dans le code, TaskTake renvoie une erreur
   Au bout de 100ms, TaskGive se débloque et donne un sémaphore et se bloque pendant 200ms. Ceci 11 fois au total car TaskGive donne un sémaphore puis se bloque pendant un temps. C'est ce que l'on observe dans les screens peu importe la priorité de la tâche. La différence dans la priorité ici est quelle tâche commence.
 
 ## 1.3 Notification
-**Code :**
+7) **Code :**
 
 <img width="400" height="385" alt="image" src="https://github.com/user-attachments/assets/52de239b-f23f-4111-81ce-95a2fc66767d" />
 
@@ -54,7 +54,29 @@ Les résultats obtenus sont cohérent. Dans le code, TaskTake renvoie une erreur
 
 Cela fonctionne comme avant donc on a réussie à remplacer le sémaphore en notification.
 
+## 1.4 Queues
+8) **Résultat :**
+   
+   <img width="253" height="691" alt="image" src="https://github.com/user-attachments/assets/c3b679f2-0853-4392-a690-7cc266e6dddd" />
 
+   On observe bien qu'à chaque fois que la tâche TaskGive se bloque, donc une fois que l'on envoie une notification à TaskTake, le tick a bien été envoyé et est reçu par TaskTake qui renvoie la valeur du tick et se rebloque jusqu'à la prochaine notification. 
 
+## 1.5 Réentrance et exclusion mutuelle
+9) 
 
+<img width="281" height="55" alt="image" src="https://github.com/user-attachments/assets/27f163b5-6ead-4b9f-9e44-ddbf6e748d60" />
 
+10) Le problème ici est que le printf n'affiche pas les mêmes valeurs de delay pour les tâches une et deux. Deux hypothèses :
+- le stack_size est trop petit par rapport à ce que prend printf en mémoire et le stack_overflow crée cette erreur.
+- le delay est trop petit par rapport au temps que prends printf pour transmettre sur l'uart la chaine de caractère.
+
+  Pour vérifier ces hypothèses, on a modifié les valeurs Stack_Size et TASKi_DELAY. Résultat : le overflow n'est pas le problème car l'affichage dans le terminal ne se corrige pas mais si on augmente le delay de la tâche 2 plus prioritaire, on observe bien que l'affichage se corrige :
+
+  <img width="295" height="61" alt="image" src="https://github.com/user-attachments/assets/ab348640-bdce-4575-8d09-8c7881cb2ef7" />
+
+11) On va donc devoir utiliser un sémaphore Mutex pour protéger le printf tout en respectant le delay de dodo de chacune des tâches.
+**Résultat :**
+
+<img width="327" height="49" alt="image" src="https://github.com/user-attachments/assets/b3c51b6f-42a1-4bf7-b4fc-37b5e6db82af" />
+
+Problème réglé !

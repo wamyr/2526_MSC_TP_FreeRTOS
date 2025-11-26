@@ -35,17 +35,17 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_rnglists 00000ca3  00000000  00000000  0001fe10  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0002156e  00000000  00000000  00020ab3  2**0
+ 16 .debug_macro  000216e4  00000000  00000000  00020ab3  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00016c5e  00000000  00000000  00042021  2**0
+ 17 .debug_line   00016c8a  00000000  00000000  00042197  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000c1793  00000000  00000000  00058c7f  2**0
+ 18 .debug_str    000c1793  00000000  00000000  00058e21  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  0011a412  2**0
+ 19 .comment      00000043  00000000  00000000  0011a5b4  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000049b8  00000000  00000000  0011a458  2**2
+ 20 .debug_frame  000049b8  00000000  00000000  0011a5f8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000007f  00000000  00000000  0011ee10  2**0
+ 21 .debug_line_str 0000007f  00000000  00000000  0011efb0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -772,6 +772,7 @@ int main(void)
  80007ae:	4825      	ldr	r0, [pc, #148]	@ (8000844 <main+0xac>)
  80007b0:	f004 ff3a 	bl	8005628 <puts>
 
+	
 	TaskGT_queue = xQueueCreate(TaskGT_iter_max, sizeof(uint32_t));
  80007b4:	2200      	movs	r2, #0
  80007b6:	2104      	movs	r1, #4
