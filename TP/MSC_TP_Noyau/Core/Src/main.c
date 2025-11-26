@@ -18,9 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "cmsis_os.h"
-#include "usart.h"
-#include "gpio.h"
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -43,6 +41,7 @@
 #define TASK2_PRIORITY 2
 #define TASK1_DELAY 1
 #define TASK2_DELAY 2
+#define TaskGT_iter_max 15
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -55,6 +54,8 @@
 /* USER CODE BEGIN PV */
 
 BaseType_t ret ;
+SemaphoreHandle_t Task_bug_mutex;
+QueueHandle_t TaskGT_queue;
 
 /* USER CODE END PV */
 
@@ -104,11 +105,21 @@ int main(void)
 
 	printf("\r\n ** INTRO_RTOS ** \r\n");
 
-	/*
+	TaskGT_queue = xQueueCreate(TaskGT_iter_max, sizeof(uint32_t));
+
+	if (TaskGT_queue == NULL) {
+		// Erreur : pas assez de mémoire heap
+		printf("Error creating Queue !\r\n");
+		printf("Performing software reset...\r\n");
+		NVIC_SystemReset();
+	}
+
+	//sem_task = xSemaphoreCreateBinary();
+/*
 	if(xTaskCreate(task_ToggleLED, "ToggleLED", 256, NULL, 3 , &h_task_ToggleLED) != pdPASS){
 		printf("Error creating task \r\n");
 		Error_Handler();
-	}
+	}*/
 
 
 	if( pdPASS != xTaskCreate(taskGive, "taskGive", 256, NULL, 1, NULL)){
@@ -120,11 +131,12 @@ int main(void)
 		printf("error creating task Take \r\n");
 		Error_Handler();
 	}
-*/
-	ret = xTaskCreate(task_bug, "Tache 1", STACK_SIZE, (void *) TASK1_DELAY, TASK1_PRIORITY, NULL);
+
+	Task_bug_mutex = xSemaphoreCreateMutex();
+	/*ret = xTaskCreate(task_bug, "Tache 1", STACK_SIZE, (void *) TASK1_DELAY, TASK1_PRIORITY, NULL);
 	configASSERT(pdPASS == ret);
 	ret = xTaskCreate(task_bug, "Tache 2", STACK_SIZE, (void *) TASK2_DELAY, TASK2_PRIORITY, NULL);
-	configASSERT(pdPASS == ret);
+	configASSERT(pdPASS == ret);*/
 
 	vTaskStartScheduler();
 
