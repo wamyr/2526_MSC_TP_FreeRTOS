@@ -23,5 +23,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		//HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
 		btn_flag = 1;
 	}
+	if (huart -> Instance == USART2)
+	{
+		//Caractère reçu : Donner le sémaphore pour débloquer task_shell
+		shell_uart_rx_callback();
+	}
 
 }

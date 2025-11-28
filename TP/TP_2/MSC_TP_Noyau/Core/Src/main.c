@@ -24,7 +24,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "shell.h"
 
 
 /* USER CODE END Includes */
@@ -123,13 +123,19 @@ int main(void)
 		Error_Handler();
 	}*/
 
-
+/*
 	if( pdPASS != xTaskCreate(taskGive, "taskGive", 256, NULL, 1, NULL)){
 		printf("error creating task Give \r\n");
 		Error_Handler();
 	}
 
 	if( pdPASS != xTaskCreate(taskTake, "taskTake", 256, NULL, 2, &HandleTaskTake)){
+		printf("error creating task Take \r\n");
+		Error_Handler();
+	}*/
+
+	if (pdPASS != xTaskCreate(task_shell, "shell", 512, NULL, 1, NULL))
+	{
 		printf("error creating task Take \r\n");
 		Error_Handler();
 	}

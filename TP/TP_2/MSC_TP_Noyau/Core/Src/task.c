@@ -7,6 +7,20 @@
 
 #include "task.h"
 
+void task_shell (void* unused)
+{
+	shell_init();
+	shell_add('f', fonction, "Une fonction inutile");
+	shell_add('a', addition, "Ma super addition");
+	shell_run();
+
+	// une tâche ne doit JAMAIS retourner ou alors utiliser vtaskdelete
+	// ici dans tout les cas c'est une boucle infini donc ne retournera rien.
+}
+
+
+
+
 TaskHandle_t h_task_ToggleLED;
 int btn_flag;
 
@@ -94,5 +108,6 @@ void task_bug(void * pvParameters)
 		vTaskDelay(delay);
 	}
 }
+
 
 //test
