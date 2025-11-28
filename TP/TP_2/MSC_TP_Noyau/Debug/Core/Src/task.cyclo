@@ -1,5 +1,6 @@
 ../Drivers/CMSIS/Include/core_cm4.h:1933:34:__NVIC_SystemReset	1
-../Core/Src/task.c:13:6:task_ToggleLED	1
-../Core/Src/task.c:30:6:taskGive	2
-../Core/Src/task.c:50:6:taskTake	2
-../Core/Src/task.c:77:6:task_bug	1
+../Core/Src/task.c:10:6:task_shell	1
+../Core/Src/task.c:27:6:task_ToggleLED	1
+../Core/Src/task.c:44:6:taskGive	2
+../Core/Src/task.c:64:6:taskTake	2
+../Core/Src/task.c:91:6:task_bug	1

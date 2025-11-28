@@ -11,6 +11,8 @@
 #include <stdio.h>
 #include "cmsis_os.h"
 #include "gpio.h"
+#include "fonctions.h"
+#include "Shell.h"
 
 #define PERIOD_TOGGLE (100 / portTICK_PERIOD_MS) // Corresponds to 100ms.
 #define DELAY_100MS (100 / portTICK_PERIOD_MS)
@@ -22,7 +24,7 @@ extern int btn_flag ;
 //extern SemaphoreHandle_t sem_task;
 extern TaskHandle_t HandleTaskTake;
 
-
+void task_shell (void* unused);
 void task_ToggleLED(void * unused);
 void taskGive(void * unused);
 void taskTake(void * unused);

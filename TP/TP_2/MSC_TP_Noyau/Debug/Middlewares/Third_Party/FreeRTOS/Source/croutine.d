@@ -45,7 +45,8 @@ Middlewares/Third_Party/FreeRTOS/Source/croutine.o: \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr_ex.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
- ../Core/Inc/fonctions.h ../Core/Inc/task.h \
+ ../Core/Inc/fonctions.h ../Core/Inc/task.h ../Core/Inc/usart.h \
+ C:/Users/garbe/Desktop/Ensea/3A/TP_FreeRTOS/2526_MSC_TP_FreeRTOS/TP/TP_2/MSC_TP_Noyau/Shell/Shell.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
@@ -95,4 +96,6 @@ Middlewares/Third_Party/FreeRTOS/Source/croutine.o: \
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h:
 ../Core/Inc/fonctions.h:
 ../Core/Inc/task.h:
+../Core/Inc/usart.h:
+C:/Users/garbe/Desktop/Ensea/3A/TP_FreeRTOS/2526_MSC_TP_FreeRTOS/TP/TP_2/MSC_TP_Noyau/Shell/Shell.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h:

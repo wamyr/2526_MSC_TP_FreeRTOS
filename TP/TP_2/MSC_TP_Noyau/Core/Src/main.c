@@ -24,7 +24,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "shell.h"
+#include "Shell.h"
 
 
 /* USER CODE END Includes */
