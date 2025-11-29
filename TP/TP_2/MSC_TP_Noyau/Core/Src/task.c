@@ -49,7 +49,7 @@ void task_spam(void * unused)
 		printf("%s \r\n", message);
 		vTaskDelay(Period_Delay_msg);
 	}
-	vTaskResume(h_task_shell); //without this line the shell command line doesn't display proprely
+	vTaskResume(h_task_shell); //without this line the shell command line doesn't display properly
 	vTaskSuspend(NULL);
 	}
 }

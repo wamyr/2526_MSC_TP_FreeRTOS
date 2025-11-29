@@ -35,17 +35,17 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_rnglists 00000d7f  00000000  00000000  00025000  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00022184  00000000  00000000  00025d7f  2**0
+ 16 .debug_macro  000221d8  00000000  00000000  00025d7f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00018e27  00000000  00000000  00047f03  2**0
+ 17 .debug_line   00018e27  00000000  00000000  00047f57  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000c1bd1  00000000  00000000  00060d2a  2**0
+ 18 .debug_str    000c1bdf  00000000  00000000  00060d7e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  001228fb  2**0
+ 19 .comment      00000043  00000000  00000000  0012295d  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00005054  00000000  00000000  00122940  2**2
+ 20 .debug_frame  00005054  00000000  00000000  001229a0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000071  00000000  00000000  00127994  2**0
+ 21 .debug_line_str 00000071  00000000  00000000  001279f4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -554,7 +554,7 @@ int ToggleLED(int argc, char ** argv)
  800067e:	f04f 33ff 	mov.w	r3, #4294967295
  8000682:	e03a      	b.n	80006fa <ToggleLED+0x92>
 	}
-	else if (atoi(argv[1]) >= 5000){
+	else if (atoi(argv[1]) >= FIVE_SEC){
  8000684:	683b      	ldr	r3, [r7, #0]
  8000686:	3304      	adds	r3, #4
  8000688:	681b      	ldr	r3, [r3, #0]
@@ -694,7 +694,7 @@ int spam(int argc, char ** argv)
  800076a:	4603      	mov	r3, r0
  800076c:	4a0c      	ldr	r2, [pc, #48]	@ (80007a0 <spam+0x8c>)
  800076e:	6013      	str	r3, [r2, #0]
-		vTaskResume(h_task_spam); //without this line the shell command line doesn't display proprely
+		vTaskResume(h_task_spam); //without this line the shell command line doesn't display properly
  8000770:	4b08      	ldr	r3, [pc, #32]	@ (8000794 <spam+0x80>)
  8000772:	681b      	ldr	r3, [r3, #0]
  8000774:	4618      	mov	r0, r3
@@ -2054,7 +2054,7 @@ void task_spam(void * unused)
  8000e86:	429a      	cmp	r2, r3
  8000e88:	dbec      	blt.n	8000e64 <task_spam+0x14>
 	}
-	vTaskResume(h_task_shell); //without this line the shell command line doesn't display proprely
+	vTaskResume(h_task_shell); //without this line the shell command line doesn't display properly
  8000e8a:	4b08      	ldr	r3, [pc, #32]	@ (8000eac <task_spam+0x5c>)
  8000e8c:	681b      	ldr	r3, [r3, #0]
  8000e8e:	4618      	mov	r0, r3

@@ -17,7 +17,7 @@ int ToggleLED(int argc, char ** argv)
 		printf("C est 1 argument compris entre 0 et 1000 car on est presse ici  \r\n"); // ATTENTION SI PAS DE \n  PRINTF STOCKER DANS TABLEAU CHACHE DONC QUAND ON APPEllERA PRINTF, MEME SI ERREUR CORRIGE, CA RENVOIT CE QU IL Y A DANS CE TABLEAU, DONC CA PEUT FAIRE CROIRE QUE C EST PAS CORRIGE ALORS QUE SI
 		return -1; //arrête la fonction et -1 correspond traditionnellement à une erreur.
 	}
-	else if (atoi(argv[1]) >= 5000){
+	else if (atoi(argv[1]) >= FIVE_SEC){
 		printf("tu veux vraiment attendre plus de 5 secondes ? \r\n");
 		return -1;
 	}
@@ -57,7 +57,7 @@ int spam(int argc, char ** argv)
 		Period_Delay_msg = (TickType_t)Period_Delay_msg_int;
 		message = argv[1];
 		number_msg = atoi(argv[2]);
-		vTaskResume(h_task_spam); //without this line the shell command line doesn't display proprely
+		vTaskResume(h_task_spam); //without this line the shell command line doesn't display properly
 		vTaskSuspend(h_task_shell);
 	}
 	return 0 ;
