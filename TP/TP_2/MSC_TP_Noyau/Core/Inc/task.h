@@ -21,10 +21,12 @@
 
 extern TaskHandle_t h_task_ToggleLED ;
 extern int btn_flag ;
-//extern SemaphoreHandle_t sem_task;
+extern TaskHandle_t h_task_spam;
 extern TaskHandle_t HandleTaskTake;
+extern TaskHandle_t h_task_shell;
 
 void task_shell (void* unused);
+void task_spam(void * unused);
 void task_ToggleLED(void * unused);
 void taskGive(void * unused);
 void taskTake(void * unused);

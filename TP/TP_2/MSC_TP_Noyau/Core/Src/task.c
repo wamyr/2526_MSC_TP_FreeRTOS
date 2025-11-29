@@ -7,11 +7,15 @@
 
 #include "task.h"
 
+TaskHandle_t h_task_shell;
+
 void task_shell (void* unused)
 {
 	shell_init();
 	shell_add('f', fonction, "Une fonction inutile");
 	shell_add('a', addition, "Ma super addition");
+	shell_add('l', ToggleLED, "Une fonction qui prend en paramètre Period_toggle compris entre 0 et 4.9s.");
+	shell_add('s', spam, "spam avec message nombre frequence");
 	shell_run();
 
 	// une tâche ne doit JAMAIS retourner ou alors utiliser vtaskdelete
@@ -20,19 +24,33 @@ void task_shell (void* unused)
 
 
 
-
-TaskHandle_t h_task_ToggleLED;
 int btn_flag;
+TaskHandle_t h_task_ToggleLED;
+
 
 void task_ToggleLED(void * unused)
 {
-	for (;;)
-	{
-		/*
-		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-		printf("LED toggled \n\r");
-		vTaskDelay(PERIOD_TOGGLE);
-		 */
+	HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, RESET);
+	vTaskSuspend(NULL);
+	for (;;){
+	HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+	vTaskDelay(Period_Toggle);
+	}
+}
+
+
+TaskHandle_t h_task_spam;
+
+void task_spam(void * unused)
+{
+	vTaskSuspend(NULL);
+	for (;;){
+	for(int i = 0; i < number_msg; i++){
+		printf("%s \r\n", message);
+		vTaskDelay(Period_Delay_msg);
+	}
+	vTaskResume(h_task_shell); //without this line the shell command line doesn't display proprely
+	vTaskSuspend(NULL);
 	}
 }
 
@@ -109,5 +127,3 @@ void task_bug(void * pvParameters)
 	}
 }
 
-
-//test

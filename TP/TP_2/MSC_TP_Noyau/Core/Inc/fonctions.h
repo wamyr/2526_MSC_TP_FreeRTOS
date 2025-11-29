@@ -13,9 +13,14 @@
 #include "task.h"
 #include "usart.h"
 
+extern TickType_t Period_Toggle;
+extern TickType_t Period_Delay_msg;
+extern char* message;
+extern int number_msg;
 
-void ToggleLED();
+int ToggleLED(int argc, char ** argv);
 int fonction(int argc, char ** argv);
 int addition(int argc, char ** argv);
+int spam(int argc, char ** argv);
 
 #endif /* INC_FONCTIONS_H_ */
