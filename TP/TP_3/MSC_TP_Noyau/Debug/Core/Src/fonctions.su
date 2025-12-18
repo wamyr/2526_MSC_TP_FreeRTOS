@@ -1,0 +1,6 @@
+../Core/Src/fonctions.c:12:5:ToggleLED	24	static
+../Core/Src/fonctions.c:45:5:spam	24	static
+../Core/Src/fonctions.c:67:5:fonction	24	static
+../Core/Src/fonctions.c:79:5:addition	32	static
+../Core/Src/fonctions.c:96:6:HAL_GPIO_EXTI_Callback	16	static
+../Core/Src/fonctions.c:106:6:HAL_UART_RxCpltCallback	16	static
