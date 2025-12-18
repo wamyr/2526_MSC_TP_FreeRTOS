@@ -8,8 +8,10 @@
 
 4) On reprend la même stratégie ici, la différence va être sur l'affichage. Lorsque l'on appel la fonction spam et donc que l'on active la tâche spam, on doit bloquer le shell, autrement le '> ' s'affichait avant le spam. On aurait faire cela autrement par le biais de notification notamment si le spam est utilisé autrement comme dans la réception de donnée de capteurs. 
 
-Sans bloquer la tâche Shell :
+En bloquant la tâche Shell :
+
 ![WhatsApp Image 2025-12-18 at 09 20 32](https://github.com/user-attachments/assets/86d79302-400e-4623-b364-eaa418dee6b9)
 
-En bloquant la tâche Shell :
+Sans bloquer la tâche Shell :
+
 ![WhatsApp Image 2025-12-18 at 09 27 51](https://github.com/user-attachments/assets/2962e4b9-c347-43ce-9683-0450d5b2c79a)
