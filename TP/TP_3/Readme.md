@@ -25,6 +25,8 @@ Résultat :
 La mémoire flash est plus pleine que précédemment. En effet, comme expliqué ci-dessus, on a augmenté la heap_size donc la taille de la pile de FreeRTOS donc de manière static, c'est pourquoi cette fois-ci on observe une augmentation de la flash.
 
 ##3.2 Gestion des piles :
-
+A faire :
+Expliquer que création de tache stack overflow qui crée un tableau qui dépasse la taille de la pile de FreeRTOS et comment c'est détecter par la fonction vApplicationStackOverflowHook().
+<img width="268" height="34" alt="image" src="https://github.com/user-attachments/assets/11459020-0d47-43f3-96dd-34db0aacc167" />
 
 
