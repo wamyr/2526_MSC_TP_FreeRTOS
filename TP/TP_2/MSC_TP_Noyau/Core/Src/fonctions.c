@@ -14,11 +14,11 @@ int ToggleLED(int argc, char ** argv)
 
 	if (argc !=2)
 	{
-		printf("C est 1 argument compris entre 0 et 1000 car on est presse ici  \r\n"); // ATTENTION SI PAS DE \n  PRINTF STOCKER DANS TABLEAU CHACHE DONC QUAND ON APPEllERA PRINTF, MEME SI ERREUR CORRIGE, CA RENVOIT CE QU IL Y A DANS CE TABLEAU, DONC CA PEUT FAIRE CROIRE QUE C EST PAS CORRIGE ALORS QUE SI
+		printf("C est 1 argument compris entre 0 et 1000 car on est presse ici\r\n"); // ATTENTION SI PAS DE \n  PRINTF STOCKER DANS TABLEAU CHACHE DONC QUAND ON APPEllERA PRINTF, MEME SI ERREUR CORRIGE, CA RENVOIT CE QU IL Y A DANS CE TABLEAU, DONC CA PEUT FAIRE CROIRE QUE C EST PAS CORRIGE ALORS QUE SI
 		return -1; //arrête la fonction et -1 correspond traditionnellement à une erreur.
 	}
 	else if (atoi(argv[1]) >= FIVE_SEC){
-		printf("tu veux vraiment attendre plus de 5 secondes ? \r\n");
+		printf("tu veux vraiment attendre plus de 5 secondes ?\r\n");
 		return -1;
 	}
 	else{
