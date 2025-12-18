@@ -7,23 +7,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         000086a8  080001e0  080001e0  000011e0  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       000005f0  08008888  08008888  00009888  2**2
+  2 .rodata       000005e8  08008888  08008888  00009888  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08008e78  08008e78  0000a070  2**0
+  3 .ARM.extab    00000000  08008e70  08008e70  0000a070  2**0
                   CONTENTS, READONLY
-  4 .ARM          00000008  08008e78  08008e78  00009e78  2**2
+  4 .ARM          00000008  08008e70  08008e70  00009e70  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  08008e80  08008e80  0000a070  2**0
+  5 .preinit_array 00000000  08008e78  08008e78  0000a070  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08008e80  08008e80  00009e80  2**2
+  6 .init_array   00000004  08008e78  08008e78  00009e78  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .fini_array   00000004  08008e84  08008e84  00009e84  2**2
+  7 .fini_array   00000004  08008e7c  08008e7c  00009e7c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  8 .data         00000070  20000000  08008e88  0000a000  2**2
+  8 .data         00000070  20000000  08008e80  0000a000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          0000574c  20000070  08008ef8  0000a070  2**2
+  9 .bss          0000574c  20000070  08008ef0  0000a070  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  200057bc  08008ef8  0000a7bc  2**0
+ 10 ._user_heap_stack 00000604  200057bc  08008ef0  0000a7bc  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  0000a070  2**0
                   CONTENTS, READONLY
@@ -547,7 +547,7 @@ int ToggleLED(int argc, char ** argv)
  8000674:	2b02      	cmp	r3, #2
  8000676:	d005      	beq.n	8000684 <ToggleLED+0x1c>
 	{
-		printf("C est 1 argument compris entre 0 et 1000 car on est presse ici  \r\n"); // ATTENTION SI PAS DE \n  PRINTF STOCKER DANS TABLEAU CHACHE DONC QUAND ON APPEllERA PRINTF, MEME SI ERREUR CORRIGE, CA RENVOIT CE QU IL Y A DANS CE TABLEAU, DONC CA PEUT FAIRE CROIRE QUE C EST PAS CORRIGE ALORS QUE SI
+		printf("C est 1 argument compris entre 0 et 1000 car on est presse ici\r\n"); // ATTENTION SI PAS DE \n  PRINTF STOCKER DANS TABLEAU CHACHE DONC QUAND ON APPEllERA PRINTF, MEME SI ERREUR CORRIGE, CA RENVOIT CE QU IL Y A DANS CE TABLEAU, DONC CA PEUT FAIRE CROIRE QUE C EST PAS CORRIGE ALORS QUE SI
  8000678:	4822      	ldr	r0, [pc, #136]	@ (8000704 <ToggleLED+0x9c>)
  800067a:	f007 f8ab 	bl	80077d4 <puts>
 		return -1; //arrête la fonction et -1 correspond traditionnellement à une erreur.
@@ -564,7 +564,7 @@ int ToggleLED(int argc, char ** argv)
  8000692:	f241 3287 	movw	r2, #4999	@ 0x1387
  8000696:	4293      	cmp	r3, r2
  8000698:	dd05      	ble.n	80006a6 <ToggleLED+0x3e>
-		printf("tu veux vraiment attendre plus de 5 secondes ? \r\n");
+		printf("tu veux vraiment attendre plus de 5 secondes ?\r\n");
  800069a:	481b      	ldr	r0, [pc, #108]	@ (8000708 <ToggleLED+0xa0>)
  800069c:	f007 f89a 	bl	80077d4 <puts>
 		return -1;
@@ -629,7 +629,7 @@ int ToggleLED(int argc, char ** argv)
  8000700:	bd80      	pop	{r7, pc}
  8000702:	bf00      	nop
  8000704:	080088b0 	.word	0x080088b0
- 8000708:	080088f4 	.word	0x080088f4
+ 8000708:	080088f0 	.word	0x080088f0
  800070c:	200002e4 	.word	0x200002e4
  8000710:	20000304 	.word	0x20000304
 
@@ -713,7 +713,7 @@ int spam(int argc, char ** argv)
  800078a:	46bd      	mov	sp, r7
  800078c:	bd80      	pop	{r7, pc}
  800078e:	bf00      	nop
- 8000790:	0800892c 	.word	0x0800892c
+ 8000790:	08008924 	.word	0x08008924
  8000794:	20000308 	.word	0x20000308
  8000798:	200002e8 	.word	0x200002e8
  800079c:	20000000 	.word	0x20000000
@@ -767,8 +767,8 @@ int fonction(int argc, char ** argv) // char ** : pointeur de pointeur ou tablea
  80007e6:	3710      	adds	r7, #16
  80007e8:	46bd      	mov	sp, r7
  80007ea:	bd80      	pop	{r7, pc}
- 80007ec:	08008948 	.word	0x08008948
- 80007f0:	08008964 	.word	0x08008964
+ 80007ec:	08008940 	.word	0x08008940
+ 80007f0:	0800895c 	.word	0x0800895c
 
 080007f4 <addition>:
 
@@ -827,8 +827,8 @@ int addition(int argc, char ** argv) //format classique
  8000846:	46bd      	mov	sp, r7
  8000848:	bd80      	pop	{r7, pc}
  800084a:	bf00      	nop
- 800084c:	08008978 	.word	0x08008978
- 8000850:	08008994 	.word	0x08008994
+ 800084c:	08008970 	.word	0x08008970
+ 8000850:	0800898c 	.word	0x0800898c
 
 08000854 <HAL_GPIO_EXTI_Callback>:
 
@@ -1222,20 +1222,20 @@ int main(void)
  8000a76:	bf00      	nop
  8000a78:	e7fd      	b.n	8000a76 <main+0xce>
  8000a7a:	bf00      	nop
- 8000a7c:	080089a4 	.word	0x080089a4
+ 8000a7c:	0800899c 	.word	0x0800899c
  8000a80:	200002f4 	.word	0x200002f4
- 8000a84:	080089bc 	.word	0x080089bc
- 8000a88:	080089d4 	.word	0x080089d4
+ 8000a84:	080089b4 	.word	0x080089b4
+ 8000a88:	080089cc 	.word	0x080089cc
  8000a8c:	200002fc 	.word	0x200002fc
- 8000a90:	080089f4 	.word	0x080089f4
+ 8000a90:	080089ec 	.word	0x080089ec
  8000a94:	08000db9 	.word	0x08000db9
- 8000a98:	080089fc 	.word	0x080089fc
+ 8000a98:	080089f4 	.word	0x080089f4
  8000a9c:	20000304 	.word	0x20000304
- 8000aa0:	08008a18 	.word	0x08008a18
+ 8000aa0:	08008a10 	.word	0x08008a10
  8000aa4:	08000e19 	.word	0x08000e19
- 8000aa8:	08008a24 	.word	0x08008a24
+ 8000aa8:	08008a1c 	.word	0x08008a1c
  8000aac:	20000308 	.word	0x20000308
- 8000ab0:	08008a3c 	.word	0x08008a3c
+ 8000ab0:	08008a34 	.word	0x08008a34
  8000ab4:	08000e51 	.word	0x08000e51
  8000ab8:	200002f0 	.word	0x200002f0
 
@@ -1970,13 +1970,13 @@ void task_shell (void* unused)
  8000df2:	3708      	adds	r7, #8
  8000df4:	46bd      	mov	sp, r7
  8000df6:	bd80      	pop	{r7, pc}
- 8000df8:	08008a44 	.word	0x08008a44
+ 8000df8:	08008a3c 	.word	0x08008a3c
  8000dfc:	080007a9 	.word	0x080007a9
- 8000e00:	08008a5c 	.word	0x08008a5c
+ 8000e00:	08008a54 	.word	0x08008a54
  8000e04:	080007f5 	.word	0x080007f5
- 8000e08:	08008a70 	.word	0x08008a70
+ 8000e08:	08008a68 	.word	0x08008a68
  8000e0c:	08000669 	.word	0x08000669
- 8000e10:	08008abc 	.word	0x08008abc
+ 8000e10:	08008ab4 	.word	0x08008ab4
  8000e14:	08000715 	.word	0x08000715
 
 08000e18 <task_ToggleLED>:
@@ -2065,7 +2065,7 @@ void task_spam(void * unused)
 	for(int i = 0; i < number_msg; i++){
  8000e9a:	e7e0      	b.n	8000e5e <task_spam+0xe>
  8000e9c:	20000000 	.word	0x20000000
- 8000ea0:	08008ae0 	.word	0x08008ae0
+ 8000ea0:	08008ad8 	.word	0x08008ad8
  8000ea4:	200002e8 	.word	0x200002e8
  8000ea8:	200002ec 	.word	0x200002ec
  8000eac:	200002fc 	.word	0x200002fc
@@ -2394,7 +2394,7 @@ LoopForever:
   ldr r1, =_edata
  8001048:	20000070 	.word	0x20000070
   ldr r2, =_sidata
- 800104c:	08008e88 	.word	0x08008e88
+ 800104c:	08008e80 	.word	0x08008e80
   ldr r2, =_sbss
  8001050:	20000070 	.word	0x20000070
   ldr r4, =_ebss
@@ -5556,7 +5556,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, ui
  8002260:	40022000 	.word	0x40022000
  8002264:	40021000 	.word	0x40021000
  8002268:	04c4b400 	.word	0x04c4b400
- 800226c:	08008d04 	.word	0x08008d04
+ 800226c:	08008cfc 	.word	0x08008cfc
  8002270:	20000004 	.word	0x20000004
  8002274:	20000008 	.word	0x20000008
 
@@ -5737,7 +5737,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8002374:	4618      	mov	r0, r3
  8002376:	bd80      	pop	{r7, pc}
  8002378:	40021000 	.word	0x40021000
- 800237c:	08008d14 	.word	0x08008d14
+ 800237c:	08008d0c 	.word	0x08008d0c
 
 08002380 <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -5764,7 +5764,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  80023a0:	4618      	mov	r0, r3
  80023a2:	bd80      	pop	{r7, pc}
  80023a4:	40021000 	.word	0x40021000
- 80023a8:	08008d14 	.word	0x08008d14
+ 80023a8:	08008d0c 	.word	0x08008d0c
 
 080023ac <RCC_GetSysClockFreqFromPLLSource>:
 /**
@@ -8785,7 +8785,7 @@ HAL_StatusTypeDef UART_SetConfig(UART_HandleTypeDef *huart)
  80036b8:	46bd      	mov	sp, r7
  80036ba:	e8bd 8fb0 	ldmia.w	sp!, {r4, r5, r7, r8, r9, sl, fp, pc}
  80036be:	bf00      	nop
- 80036c0:	08008d1c 	.word	0x08008d1c
+ 80036c0:	08008d14 	.word	0x08008d14
  80036c4:	00f42400 	.word	0x00f42400
 
 080036c8 <UART_AdvFeatureConfig>:
@@ -11980,8 +11980,8 @@ static void UARTEx_SetNbDataToProcess(UART_HandleTypeDef *huart)
  8004a3c:	f85d 7b04 	ldr.w	r7, [sp], #4
  8004a40:	4770      	bx	lr
  8004a42:	bf00      	nop
- 8004a44:	08008d34 	.word	0x08008d34
- 8004a48:	08008d3c 	.word	0x08008d3c
+ 8004a44:	08008d2c 	.word	0x08008d2c
+ 8004a48:	08008d34 	.word	0x08008d34
 
 08004a4c <makeFreeRtosPriority>:
 
@@ -15615,7 +15615,7 @@ BaseType_t xReturn;
  8005c72:	46bd      	mov	sp, r7
  8005c74:	bd80      	pop	{r7, pc}
  8005c76:	bf00      	nop
- 8005c78:	08008c94 	.word	0x08008c94
+ 8005c78:	08008c8c 	.word	0x08008c8c
  8005c7c:	08006235 	.word	0x08006235
  8005c80:	200004c8 	.word	0x200004c8
  8005c84:	200004c4 	.word	0x200004c4
@@ -19459,7 +19459,7 @@ static int sh_help(int argc, char ** argv) {
  800719c:	bd80      	pop	{r7, pc}
  800719e:	bf00      	nop
  80071a0:	20005320 	.word	0x20005320
- 80071a4:	08008c9c 	.word	0x08008c9c
+ 80071a4:	08008c94 	.word	0x08008c94
  80071a8:	20005620 	.word	0x20005620
  80071ac:	2000531c 	.word	0x2000531c
 
@@ -19507,9 +19507,9 @@ void shell_init() {
  80071f0:	46bd      	mov	sp, r7
  80071f2:	bd80      	pop	{r7, pc}
  80071f4:	20005318 	.word	0x20005318
- 80071f8:	08008ca8 	.word	0x08008ca8
+ 80071f8:	08008ca0 	.word	0x08008ca0
  80071fc:	20005620 	.word	0x20005620
- 8007200:	08008cd0 	.word	0x08008cd0
+ 8007200:	08008cc8 	.word	0x08008cc8
  8007204:	08007135 	.word	0x08007135
 
 08007208 <shell_add>:
@@ -19714,7 +19714,7 @@ static int shell_exec(char * buf) {
  800734e:	bf00      	nop
  8007350:	20005320 	.word	0x20005320
  8007354:	2000531c 	.word	0x2000531c
- 8007358:	08008cd8 	.word	0x08008cd8
+ 8007358:	08008cd0 	.word	0x08008cd0
  800735c:	20005620 	.word	0x20005620
 
 08007360 <shell_run>:
@@ -19853,12 +19853,12 @@ int shell_run() {
 		uart_write("> ", 2);
  8007418:	e7a9      	b.n	800736e <shell_run+0xe>
  800741a:	bf00      	nop
- 800741c:	08008cf0 	.word	0x08008cf0
- 8007420:	08008cf4 	.word	0x08008cf4
+ 800741c:	08008ce8 	.word	0x08008ce8
+ 8007420:	08008cec 	.word	0x08008cec
  8007424:	20005620 	.word	0x20005620
  8007428:	20005648 	.word	0x20005648
- 800742c:	08008cf8 	.word	0x08008cf8
- 8007430:	08008d00 	.word	0x08008d00
+ 800742c:	08008cf0 	.word	0x08008cf0
+ 8007430:	08008cf8 	.word	0x08008cf8
 
 08007434 <shell_uart_rx_callback>:
 	}
@@ -20001,7 +20001,7 @@ void shell_uart_rx_callback(void)
  8007560:	d1f6      	bne.n	8007550 <_strtol_l.isra.0+0xd8>
  8007562:	f8c8 1000 	str.w	r1, [r8]
  8007566:	e794      	b.n	8007492 <_strtol_l.isra.0+0x1a>
- 8007568:	08008d45 	.word	0x08008d45
+ 8007568:	08008d3d 	.word	0x08008d3d
 
 0800756c <strtol>:
  800756c:	4613      	mov	r3, r2
@@ -20630,10 +20630,10 @@ void shell_uart_rx_callback(void)
  8007ada:	4798      	blx	r3
  8007adc:	3601      	adds	r6, #1
  8007ade:	e7f2      	b.n	8007ac6 <__libc_init_array+0x1e>
- 8007ae0:	08008e80 	.word	0x08008e80
- 8007ae4:	08008e80 	.word	0x08008e80
- 8007ae8:	08008e80 	.word	0x08008e80
- 8007aec:	08008e84 	.word	0x08008e84
+ 8007ae0:	08008e78 	.word	0x08008e78
+ 8007ae4:	08008e78 	.word	0x08008e78
+ 8007ae8:	08008e78 	.word	0x08008e78
+ 8007aec:	08008e7c 	.word	0x08008e7c
 
 08007af0 <__retarget_lock_init_recursive>:
  8007af0:	4770      	bx	lr
@@ -21156,11 +21156,11 @@ void shell_uart_rx_callback(void)
  8007f98:	4638      	mov	r0, r7
  8007f9a:	f000 f9bb 	bl	8008314 <_printf_i>
  8007f9e:	e7ed      	b.n	8007f7c <_svfiprintf_r+0x1c0>
- 8007fa0:	08008e45 	.word	0x08008e45
- 8007fa4:	08008e4f 	.word	0x08008e4f
+ 8007fa0:	08008e3d 	.word	0x08008e3d
+ 8007fa4:	08008e47 	.word	0x08008e47
  8007fa8:	00000000 	.word	0x00000000
  8007fac:	08007d05 	.word	0x08007d05
- 8007fb0:	08008e4b 	.word	0x08008e4b
+ 8007fb0:	08008e43 	.word	0x08008e43
 
 08007fb4 <__sfputc_r>:
  8007fb4:	6893      	ldr	r3, [r2, #8]
@@ -21426,11 +21426,11 @@ void shell_uart_rx_callback(void)
  800821c:	4630      	mov	r0, r6
  800821e:	f000 f879 	bl	8008314 <_printf_i>
  8008222:	e7e4      	b.n	80081ee <_vfiprintf_r+0x1e6>
- 8008224:	08008e45 	.word	0x08008e45
- 8008228:	08008e4f 	.word	0x08008e4f
+ 8008224:	08008e3d 	.word	0x08008e3d
+ 8008228:	08008e47 	.word	0x08008e47
  800822c:	00000000 	.word	0x00000000
  8008230:	08007fe3 	.word	0x08007fe3
- 8008234:	08008e4b 	.word	0x08008e4b
+ 8008234:	08008e43 	.word	0x08008e43
 
 08008238 <_printf_common>:
  8008238:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -21759,8 +21759,8 @@ void shell_uart_rx_callback(void)
  8008540:	2500      	movs	r5, #0
  8008542:	f104 0619 	add.w	r6, r4, #25
  8008546:	e7f5      	b.n	8008534 <_printf_i+0x220>
- 8008548:	08008e56 	.word	0x08008e56
- 800854c:	08008e67 	.word	0x08008e67
+ 8008548:	08008e4e 	.word	0x08008e4e
+ 800854c:	08008e5f 	.word	0x08008e5f
 
 08008550 <__sflush_r>:
  8008550:	f9b1 200c 	ldrsh.w	r2, [r1, #12]
