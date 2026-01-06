@@ -45,7 +45,7 @@ Core/Src/stm32g4xx_hal_msp.o: ../Core/Src/stm32g4xx_hal_msp.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- C:/Users/sammy/Documents/2526_MSC_TP_FreeRTOS/TP/TP_2/MSC_TP_Noyau/Shell/Shell.h \
+ C:/Users/sammy/Documents/2526_MSC_TP_FreeRTOS/TP/TP_3/MSC_TP_Noyau/Shell/Shell.h \
  ../Core/Inc/usart.h
 ../Core/Inc/main.h:
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
@@ -96,5 +96,5 @@ Core/Src/stm32g4xx_hal_msp.o: ../Core/Src/stm32g4xx_hal_msp.c \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-C:/Users/sammy/Documents/2526_MSC_TP_FreeRTOS/TP/TP_2/MSC_TP_Noyau/Shell/Shell.h:
+C:/Users/sammy/Documents/2526_MSC_TP_FreeRTOS/TP/TP_3/MSC_TP_Noyau/Shell/Shell.h:
 ../Core/Inc/usart.h:

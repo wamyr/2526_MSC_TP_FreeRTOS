@@ -46,7 +46,7 @@ Middlewares/Third_Party/FreeRTOS/Source/timers.o: \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
  ../Core/Inc/fonctions.h ../Core/Inc/task.h ../Core/Inc/usart.h \
- C:/Users/sammy/Documents/2526_MSC_TP_FreeRTOS/TP/TP_2/MSC_TP_Noyau/Shell/Shell.h
+ C:/Users/sammy/Documents/2526_MSC_TP_FreeRTOS/TP/TP_3/MSC_TP_Noyau/Shell/Shell.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -96,4 +96,4 @@ Middlewares/Third_Party/FreeRTOS/Source/timers.o: \
 ../Core/Inc/fonctions.h:
 ../Core/Inc/task.h:
 ../Core/Inc/usart.h:
-C:/Users/sammy/Documents/2526_MSC_TP_FreeRTOS/TP/TP_2/MSC_TP_Noyau/Shell/Shell.h:
+C:/Users/sammy/Documents/2526_MSC_TP_FreeRTOS/TP/TP_3/MSC_TP_Noyau/Shell/Shell.h:
