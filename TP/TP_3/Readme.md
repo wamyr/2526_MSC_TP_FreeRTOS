@@ -44,7 +44,12 @@ On détecte effectivement le stack_overflow.
 
 **Fonction :** `void vApplicationDaemonTaskStartupHook( void );`qui se configure avec configUSE_DAEMON_TASK_STARTUP_HOOK. Elle est appelée une seule fois au démarrage du système, exactement au moment où la tâche Timer (Daemon Task) commence à s'exécuter. ELle permet d'exécuter du code d'initialisation qui nécessite que le scheduler soit déjà actif. Par exemple : Démarrer des Timers logiciels ou poster un événement initial.
 
+##3.3 Statistiques dans l'IDE :
 
+Il faut ajouter les screens des statistiques et expliquer ce qu'on a mis dans les fonctions et quelles tâches on va utiliser pour queue et sémaphore.
 
+##3.4 Affichage des statistiques dans le shell
+
+On en est ici
 
 
