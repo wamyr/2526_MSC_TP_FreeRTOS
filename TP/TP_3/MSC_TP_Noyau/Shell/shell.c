@@ -67,6 +67,7 @@ void shell_init() {
 	uart_write(print_buffer, size);
 
 	shell_add('h', sh_help, "Help");
+
 }
 
 int shell_add(char c, int (* pfunc)(int argc, char ** argv), char * description) {

@@ -12,6 +12,7 @@
 #include "gpio.h"
 #include "task.h"
 #include "usart.h"
+#include "tim.h"
 
 #define FIVE_SEC 5000
 

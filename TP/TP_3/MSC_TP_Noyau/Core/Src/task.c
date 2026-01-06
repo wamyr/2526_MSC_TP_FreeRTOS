@@ -23,7 +23,7 @@ void task_shell (void* unused)
 }
 
 
-
+/*
 TaskHandle_t h_task_overflow;
 
 void task_stack_overflow(void *unused) {
@@ -39,12 +39,10 @@ void task_stack_overflow(void *unused) {
     for(;;) {
         vTaskDelay(100);
     }
-}
+}*/
 
 int btn_flag;
 TaskHandle_t h_task_ToggleLED;
-
-
 
 void task_ToggleLED(void * unused)
 {

@@ -118,9 +118,15 @@ void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
 {
     printf("critical stack overflow in task: %s\r\n", pcTaskName);
     __disable_irq();
+}
 
-    while(1) {
-		Period_Toggle = 500;
-		vTaskResume(h_task_ToggleLED);
-    }
+void configureTimerForRunTimeStats(void)
+{
+    // On démarre le Timer 2 en mode "Base" (comptage simple)
+    HAL_TIM_Base_Start(&htim2);
+}
+unsigned long getRunTimeCounterValue(void)
+{
+    // On retourne la valeur actuelle du compteur (registre CNT)
+    return __HAL_TIM_GET_COUNTER(&htim2);
 }
