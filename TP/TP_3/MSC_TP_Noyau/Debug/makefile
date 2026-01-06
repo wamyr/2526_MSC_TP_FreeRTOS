@@ -65,8 +65,8 @@ all: main-build
 main-build: MSC_TP_Noyau.elf secondary-outputs
 
 # Tool invocations
-MSC_TP_Noyau.elf MSC_TP_Noyau.map: $(OBJS) $(USER_OBJS) C:\Users\sammy\Documents\2526_MSC_TP_FreeRTOS\TP\TP_3\MSC_TP_Noyau\STM32G431RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "MSC_TP_Noyau.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\sammy\Documents\2526_MSC_TP_FreeRTOS\TP\TP_3\MSC_TP_Noyau\STM32G431RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MSC_TP_Noyau.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+MSC_TP_Noyau.elf MSC_TP_Noyau.map: $(OBJS) $(USER_OBJS) C:\Users\garbe\Desktop\Ensea\3A\TP_FreeRTOS\2526_MSC_TP_FreeRTOS\TP\TP_2\MSC_TP_Noyau\STM32G431RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "MSC_TP_Noyau.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\garbe\Desktop\Ensea\3A\TP_FreeRTOS\2526_MSC_TP_FreeRTOS\TP\TP_2\MSC_TP_Noyau\STM32G431RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MSC_TP_Noyau.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

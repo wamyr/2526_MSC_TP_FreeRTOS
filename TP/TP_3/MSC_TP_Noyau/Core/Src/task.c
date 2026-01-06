@@ -24,8 +24,26 @@ void task_shell (void* unused)
 
 
 
+TaskHandle_t h_task_overflow;
+
+void task_stack_overflow(void *unused) {
+    // Tentative d'allouer 2000 octets sur une pile de 1024 octets
+    // Le compilateur peut parfois optimiser cela, pour être sûr on écrit dedans.
+    volatile uint8_t grosTableau[2000];
+
+    // On remplit le tableau pour être sûr d'écraser la mémoire
+    for(int i = 0; i < 2000; i++) {
+        grosTableau[i] = 0xBB;
+    }
+
+    for(;;) {
+        vTaskDelay(100);
+    }
+}
+
 int btn_flag;
 TaskHandle_t h_task_ToggleLED;
+
 
 
 void task_ToggleLED(void * unused)
@@ -126,4 +144,6 @@ void task_bug(void * pvParameters)
 		vTaskDelay(delay);
 	}
 }
+
+
 

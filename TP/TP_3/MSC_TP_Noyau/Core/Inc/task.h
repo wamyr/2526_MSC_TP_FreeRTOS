@@ -24,6 +24,7 @@ extern int btn_flag ;
 extern TaskHandle_t h_task_spam;
 extern TaskHandle_t HandleTaskTake;
 extern TaskHandle_t h_task_shell;
+extern TaskHandle_t h_task_overflow;
 
 void task_shell (void* unused);
 void task_spam(void * unused);
@@ -31,5 +32,6 @@ void task_ToggleLED(void * unused);
 void taskGive(void * unused);
 void taskTake(void * unused);
 void task_bug(void * pvParameters);
+void task_stack_overflow(void *unused);
 
 #endif /* INC_TASK_H_ */

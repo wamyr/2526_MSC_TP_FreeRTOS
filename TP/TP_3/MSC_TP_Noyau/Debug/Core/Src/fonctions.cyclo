@@ -4,3 +4,4 @@
 ../Core/Src/fonctions.c:79:5:addition	2
 ../Core/Src/fonctions.c:96:6:HAL_GPIO_EXTI_Callback	2
 ../Core/Src/fonctions.c:106:6:HAL_UART_RxCpltCallback	2
+../Core/Src/fonctions.c:117:6:vApplicationStackOverflowHook	1

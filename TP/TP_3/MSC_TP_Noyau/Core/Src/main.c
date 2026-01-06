@@ -106,7 +106,7 @@ int main(void)
 
 	printf("\r\n ** INTRO_RTOS ** \r\n");
 
-	
+
 	TaskGT_queue = xQueueCreate(TaskGT_iter_max, sizeof(uint32_t));
 
 	if (TaskGT_queue == NULL) {
@@ -126,15 +126,21 @@ int main(void)
 	}
 
 	if(xTaskCreate(task_ToggleLED, "ToggleLED", 256, NULL, 1 , &h_task_ToggleLED) != pdPASS){
-		printf("Error creating task \r\n");
+		printf("Error creating task ToggleLED \r\n");
 		Error_Handler();
 	}
 
 	if(xTaskCreate(task_spam, "spam", 256, NULL, 2 , &h_task_spam) != pdPASS){
-		printf("Error creating task \r\n");
+		printf("Error creating task spam \r\n");
 		Error_Handler();
 	}
-/*
+
+	if(xTaskCreate(task_stack_overflow, "stack_overflow", 256, NULL, 2, &h_task_overflow) != pdPASS){
+		printf("Error creating task stack overflow\r\n");
+		Error_Handler();
+	}
+
+	/*
 	if( pdPASS != xTaskCreate(taskGive, "taskGive", 256, NULL, 1, NULL)){
 		printf("error creating task Give \r\n");
 		Error_Handler();

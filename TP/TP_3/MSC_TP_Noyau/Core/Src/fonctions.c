@@ -14,7 +14,7 @@ int ToggleLED(int argc, char ** argv)
 
 	if (argc !=2)
 	{
-		printf("C est 1 argument compris entre 0 et 1000 car on est presse ici\r\n"); // ATTENTION SI PAS DE \n  PRINTF STOCKER DANS TABLEAU CHACHE DONC QUAND ON APPEllERA PRINTF, MEME SI ERREUR CORRIGE, CA RENVOIT CE QU IL Y A DANS CE TABLEAU, DONC CA PEUT FAIRE CROIRE QUE C EST PAS CORRIGE ALORS QUE SI
+		printf("C est 1 argument compris entre 0 et 1000 car on est presse ici\r\n"); // ATTENTION SI PAS DE \n  PRINTF STOCKER DANS TABLEAU CACHE DONC QUAND ON APPEllERA PRINTF, MEME SI ERREUR CORRIGE, CA RENVOIT CE QU IL Y A DANS CE TABLEAU, DONC CA PEUT FAIRE CROIRE QUE C EST PAS CORRIGE ALORS QUE SI
 		return -1; //arrête la fonction et -1 correspond traditionnellement à une erreur.
 	}
 	else if (atoi(argv[1]) >= FIVE_SEC){
@@ -111,4 +111,16 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		shell_uart_rx_callback();
 	}
 
+}
+
+/* Cette fonction est appelée si une tâche déborde de sa pile */
+void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
+{
+    printf("critical stack overflow in task: %s\r\n", pcTaskName);
+    __disable_irq();
+
+    while(1) {
+		Period_Toggle = 500;
+		vTaskResume(h_task_ToggleLED);
+    }
 }
